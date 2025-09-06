@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --color-primary: #f09e23;
+
+  --color-bg: #e9ebee;
+  --color-bg-dark: #1c1c1c;
+
+  --color-tile-bg: #ffffff;
+
+  --color-btn-bg: #67a120;
+  --color-btn-bg-hover: #4c7a18;
+  --color-btn-disabled: #e0e0e0;
+
+  --color-text: #222222;
+  --color-text-light: #ffffff;
+  --color-text-muted: #6c757d;
+
+  --color-border: #e0e0e0;
+  --color-border-dark: #3a3a3a;
+
+  /* Status Colors (optional) */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #17a2b8;
+
+  /* Font Sizes */
+  --font-xs: clamp(0.7rem, 0.75rem + 0.2vw, 0.85rem); /* ~12–14px */
+  --font-sm: clamp(0.8rem, 0.85rem + 0.2vw, 1rem); /* ~14–16px */
+  --font-md: clamp(0.9rem, 1rem + 0.3vw, 1.125rem); /* ~16–18px */
+  --font-lg: clamp(1.1rem, 1.25rem + 0.3vw, 1.5rem); /* ~20–24px */
+  --font-xl: clamp(1.3rem, 1.5rem + 0.5vw, 2rem); /* ~24–32px */
+  --font-xxl: clamp(1.75rem, 2rem + 1vw, 3rem);
+
+  /* Font Families */
+  --font-family-base: "Inter", "Segoe UI", Tahoma, sans-serif;
+  --font-family-heading: "Poppins", "Segoe UI", Tahoma, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-round: 50%;
+}
