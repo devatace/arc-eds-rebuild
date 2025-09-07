@@ -1,0 +1,73 @@
+.heroSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .swiperSlide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .cover {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: hsla(0, 100%, 0%, 0.3);
+    z-index: 10;
+  }
+
+  .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 15;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--color-text-light);
+      line-height: 5rem;
+      text-align: center;
+    }
+  }
+}
+
+.customBullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: gray;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
