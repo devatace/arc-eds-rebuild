@@ -18,7 +18,7 @@
 }
 
 ::selection {
-  background: var(--color-primary);
+  background: hsla(46, 95%, 53%, 0.5);
   color: white;
 }
 
