@@ -73,6 +73,7 @@ export default function MainLayout() {
                     </a>
                 </div>
             </header>
+
             <Outlet />
         </main>
     )
