@@ -1,6 +1,6 @@
 import styles from '../styles/layouts/mainLayout.module.css'
 
-import { NavLink, Outlet } from 'react-router'
+import { NavLink, Outlet, useNavigate } from 'react-router'
 
 const NavigationItem = ({ link, name }) => {
     return (
@@ -19,9 +19,11 @@ const NavigationItem = ({ link, name }) => {
 
 export default function MainLayout() {
 
+    const navigate = useNavigate();
+
     const links = [
         {
-            link: "home",
+            link: "",
             name: "Home",
         }, {
             link: "about",
@@ -47,7 +49,7 @@ export default function MainLayout() {
     return (
         <main className={styles.mainLayout}>
             <header>
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={() => navigate("/")} >
                     <img src="/icon.svg" alt="" width={150} />
                 </div>
 
@@ -78,6 +80,6 @@ export default function MainLayout() {
             </header>
 
             <Outlet />
-        </main>
+        </main >
     )
 }
