@@ -27,6 +27,9 @@ export default function MainLayout() {
             link: "about",
             name: "About",
         }, {
+            link: "exhibition",
+            name: "Exhibition",
+        }, {
             link: "gallery",
             name: "Gallery",
         }, {
