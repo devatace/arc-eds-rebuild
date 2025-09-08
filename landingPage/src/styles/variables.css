@@ -1,6 +1,7 @@
 :root {
   /* Colors */
-  --color-primary: #f09e23;
+  --color-primary: #f9c315;
+  --color-primary-hover: #dfae0e;
 
   --color-bg: #e9ebee;
   --color-bg-dark: #1c1c1c;
