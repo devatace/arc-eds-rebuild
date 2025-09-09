@@ -10,6 +10,7 @@ import Astro from '../assets/landing/astro.webp';
 import Slide1 from '../assets/landing/slide1.webp';
 import Slide2 from '../assets/landing/slide2.webp';
 import Slide3 from '../assets/landing/slide3.webp';
+import NewsMain from '../assets/landing/news-main.webp';
 
 export default function Home() {
     return (
@@ -72,6 +73,43 @@ export default function Home() {
                 <div className={styles.media}>
                     <img src={Astro} alt="" />
                 </div>
+            </section>
+
+            <section className={styles.news}>
+                <div className={styles.title}>
+                    <h3>News & Updates</h3>
+                </div>
+
+                <section className={styles.newsContainer}>
+                    <div className={styles.mainNews}>
+                        <div className={styles.image}>
+                            <img src={NewsMain} alt="" />
+                        </div>
+
+                        <div className={styles.content}>
+                            <h3 className={styles.title}>
+                                ESDEV Foundation Africa and GAEC Strengthen Collaboration for IYQ2025 and STEM Advancement
+                            </h3>
+                            <p className={styles.summary}>
+                                On February 10, 2025, the leadership of ESDEV
+                                Foundation Africa held a strategic meeting
+                                with the Director-General and team of the
+                                Ghana
+                            </p>
+                        </div>
+
+                        <div className={styles.actions}>
+                            <span><p>Aug 18, 2024</p></span>
+                            <button className={styles.readMoreBtn}>
+                                <p>Read More</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <section className={styles.otherNews}>
+                        <div className={styles.newsCard}></div>
+                    </section>
+                </section>
             </section>
         </Fragment>
     )

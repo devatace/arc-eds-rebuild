@@ -167,3 +167,113 @@
     }
   }
 }
+
+.news {
+  width: 100dvw !important;
+  min-height: 100dvh !important;
+  padding-block: 7rem;
+  padding-inline: clamp(1rem, 0.75rem + 0.2vw, 10rem);
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  row-gap: 2rem;
+
+  .title {
+    width: 100%;
+    height: 100%;
+
+    h3 {
+      font-size: var(--font-xxl);
+      font-weight: 600;
+    }
+  }
+
+  .newsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .mainNews {
+      flex: 1 1 500px;
+      max-width: 500px;
+      height: 500px;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 50% 1fr 50px;
+      padding-block-end: 1rem;
+      gap: 0.5rem;
+      background: var(--color-tile-bg);
+      position: relative;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .content {
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0.5rem;
+
+        h3 {
+          width: 100%;
+          height: 100%;
+          font-size: var(--font-md);
+          font-weight: 600;
+          line-clamp: 3;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .summary {
+          width: 100%;
+          height: 100%;
+          font-size: var(--font-sm);
+          line-clamp: 3;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow-y: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .actions {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 1rem;
+
+        span {
+          color: var(--color-text-muted);
+          font-size: var(--font-xs);
+        }
+
+        button {
+          border: 1px solid var(--color-border);
+          padding: 0.3rem 1rem;
+          border-radius: 0.3rem;
+          cursor: pointer;
+          transition: 0.1s;
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+}
