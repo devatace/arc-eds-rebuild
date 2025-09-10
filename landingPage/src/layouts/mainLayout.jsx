@@ -1,3 +1,4 @@
+import { Fragment, useEffect, useState } from 'react';
 import styles from '../styles/layouts/mainLayout.module.css'
 
 import { NavLink, Outlet, useNavigate } from 'react-router'
@@ -46,12 +47,25 @@ export default function MainLayout() {
         }
     ];
 
+    // header scroll
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     return (
-        <main className={styles.mainLayout}>
-            <header>
-                <div className={styles.logo} onClick={() => navigate("/")} >
-                    <img src="/icon.svg" alt="" width={150} />
-                </div>
+        <Fragment>
+            <header className={scrolled ? styles.scrolled : ''}>
+                <a href="/" className={styles.logo}>
+                    <img src="/icon.svg" alt="EduSkills Africa logo" width={150} />
+                </a>
 
                 <nav>
                     {links.map((link, idx) => (
@@ -80,6 +94,6 @@ export default function MainLayout() {
             </header>
 
             <Outlet />
-        </main >
+        </Fragment>
     )
 }

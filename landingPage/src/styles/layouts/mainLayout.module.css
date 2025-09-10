@@ -1,22 +1,21 @@
-.mainLayout {
-  min-width: 100dvw;
-  max-width: 100dvw;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
 header {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100vw;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  padding-inline: 5rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+  overflow-x: hidden;
+
+  &.scrolled {
+    background-color: #002552;
+  }
 
   .logo {
     cursor: pointer;

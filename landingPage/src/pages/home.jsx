@@ -14,7 +14,7 @@ import NewsMain from '../assets/landing/news-main.webp';
 
 export default function Home() {
     return (
-        <Fragment>
+        <main className={styles.homeLayout}>
             <section className={styles.heroSection}>
                 <Swiper
                     direction={'vertical'}
@@ -50,7 +50,7 @@ export default function Home() {
                 <div className={styles.content}>
                     <div className={styles.title}>
                         <div className={styles.line}></div>
-                        <h3>Know About Us</h3>
+                        <h1>Know About Us</h1>
                     </div>
                     <h2>Harnessing Potential, <br /> Shaping the Future</h2>
                     <div className={styles.text}>
@@ -111,6 +111,6 @@ export default function Home() {
                     </section>
                 </section>
             </section>
-        </Fragment>
+        </main>
     )
 }
