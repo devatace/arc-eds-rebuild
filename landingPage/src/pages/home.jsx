@@ -11,6 +11,7 @@ import Slide1 from '../assets/landing/slide1.webp';
 import Slide2 from '../assets/landing/slide2.webp';
 import Slide3 from '../assets/landing/slide3.webp';
 import NewsMain from '../assets/landing/news-main.webp';
+import ESDev from '../assets/landing/es.svg';
 
 export default function Home() {
     return (
@@ -182,6 +183,12 @@ export default function Home() {
                         </div>
                     </section>
                 </section>
+            </section>
+
+            <section className={styles.motherCompany}>
+                <div className={styles.image}>
+                    <img src={ESDev} alt="" />
+                </div>
             </section>
         </main>
     )
