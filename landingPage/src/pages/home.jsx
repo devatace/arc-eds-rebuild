@@ -78,6 +78,7 @@ export default function Home() {
             <section className={styles.news}>
                 <div className={styles.title}>
                     <h3>News & Updates</h3>
+                    <p>Stay ahead with our latest stories, insights, and announcements.</p>
                 </div>
 
                 <section className={styles.newsContainer}>
@@ -107,7 +108,78 @@ export default function Home() {
                     </div>
 
                     <section className={styles.otherNews}>
-                        <div className={styles.newsCard}></div>
+                        <div className={styles.newsCard}>
+                            <div className={styles.image}>
+                                <img src={Astro} alt="" />
+                            </div>
+
+                            <div className={styles.content}>
+                                <h3>Atronut Falls fromo Space and breaks his back</h3>
+                                <p>
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                </p>
+                            </div>
+
+                            <div className={styles.actions}>
+                                <span><p>Aug 18, 2024</p></span>
+                                <button className={styles.readMoreBtn}>Read More</button>
+                            </div>
+                        </div>
+                        <div className={styles.newsCard}>
+                            <div className={styles.image}>
+                                <img src={Astro} alt="" />
+                            </div>
+
+                            <div className={styles.content}>
+                                <h3>Atronut Falls fromo Space and breaks his back</h3>
+                                <p>
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                </p>
+                            </div>
+
+                            <div className={styles.actions}>
+                                <span><p>Aug 18, 2024</p></span>
+                                <button className={styles.readMoreBtn}>Read More</button>
+                            </div>
+                        </div>
+                        <div className={styles.newsCard}>
+                            <div className={styles.image}>
+                                <img src={Astro} alt="" />
+                            </div>
+
+                            <div className={styles.content}>
+                                <h3>Atronut Falls fromo Space and breaks his back</h3>
+                                <p>
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                </p>
+                            </div>
+
+                            <div className={styles.actions}>
+                                <span><p>Aug 18, 2024</p></span>
+                                <button className={styles.readMoreBtn}>Read More</button>
+                            </div>
+                        </div>
+                        <div className={styles.newsCard}>
+                            <div className={styles.image}>
+                                <img src={Astro} alt="" />
+                            </div>
+
+                            <div className={styles.content}>
+                                <h3>Atronut Falls fromo Space and breaks his back</h3>
+                                <p>
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                    Astronaut Neil Armstrong was the first person to walk on the moon
+                                </p>
+                            </div>
+
+                            <div className={styles.actions}>
+                                <span><p>Aug 18, 2024</p></span>
+                                <button className={styles.readMoreBtn}>Read More</button>
+                            </div>
+                        </div>
                     </section>
                 </section>
             </section>
