@@ -7,13 +7,64 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Astro from '../assets/landing/astro.webp';
-import Slide1 from '../assets/landing/slide1.webp';
-import Slide2 from '../assets/landing/slide2.webp';
-import Slide3 from '../assets/landing/slide3.webp';
+import Slide1 from '../assets/landing/slideshow/slide1.webp';
+import Slide2 from '../assets/landing/slideshow/slide2.webp';
+import Slide3 from '../assets/landing/slideshow/slide3.webp';
+import Slide4 from '../assets/landing/slideshow/slide4.webp';
+import Slide5 from '../assets/landing/slideshow/slide5.webp';
+import Slide6 from '../assets/landing/slideshow/slide6.webp';
+import Slide7 from '../assets/landing/slideshow/slide7.webp';
+import Slide8 from '../assets/landing/slideshow/slide8.webp';
+import Slide9 from '../assets/landing/slideshow/slide9.webp';
+import Slide10 from '../assets/landing/slideshow/slide10.webp';
 import NewsMain from '../assets/landing/news-main.webp';
 import ESDev from '../assets/landing/es.svg';
+import Counter from '../lib/counter';
 
 export default function Home() {
+    const slides = [
+        {
+            id: 1,
+            img: Slide1,
+        },
+        {
+            id: 2,
+            img: Slide2,
+        },
+        {
+            id: 3,
+            img: Slide3,
+        },
+        {
+            id: 4,
+            img: Slide4,
+        },
+        {
+            id: 5,
+            img: Slide5,
+        },
+        {
+            id: 6,
+            img: Slide6,
+        },
+        {
+            id: 7,
+            img: Slide7,
+        },
+        {
+            id: 8,
+            img: Slide8,
+        },
+        {
+            id: 9,
+            img: Slide9,
+        },
+        {
+            id: 10,
+            img: Slide10,
+        },
+    ]
+
     return (
         <main className={styles.homeLayout}>
             <section className={styles.heroSection}>
@@ -27,23 +78,39 @@ export default function Home() {
                     }}
                     loop={true}
                 >
-                    <SwiperSlide className={styles.swiperSlide}>
-                        <img src={Slide1} />
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.swiperSlide}>
-                        <img src={Slide2} />
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.swiperSlide}>
-                        <img src={Slide3} />
-                    </SwiperSlide>
+                    {slides.map((slide) => (
+                        <SwiperSlide key={slide.id} className={styles.swiperSlide}>
+                            <img src={slide.img} />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
 
                 <div className={styles.cover}></div>
 
                 <div className={styles.content}>
-                    <h1>The Elephant In <br /> Our Community</h1>
-                    <p>Let stories be shared!</p>
-                    <button className={styles.cta}>Join Us Now!</button>
+                    <h1>2025 ARC-EDS & IYQ<br />Global Event</h1>
+                    <button className={styles.cta}>Check it Out!</button>
+                </div>
+            </section>
+
+            <section className={styles.stats}>
+                <div className={styles.stat}>
+                    <Counter target={2000} plus={true} />
+                    <span className={styles.description}>In-Person & Online Attendees</span>
+                </div>
+
+                <hr />
+
+                <div className={styles.stat}>
+                    <Counter target={50} plus={true} />
+                    <span className={styles.description}>Exhibitions</span>
+                </div>
+
+                <hr />
+
+                <div className={styles.stat}>
+                    <Counter target={2} />
+                    <span className={styles.description}>Conferences</span>
                 </div>
             </section>
 
@@ -56,16 +123,18 @@ export default function Home() {
                     <h2>Harnessing Potential, <br /> Shaping the Future</h2>
                     <div className={styles.text}>
                         <p>
-                            In 2023, the UN warned that only 12% of the
-                            global goals for 2030 are on track, with Africa
-                            facing some of the toughest challenges—youth
-                            unemployment, rapid population growth, and the
-                            urgent need for inclusive economic opportunities.
-                            At ARC-EDS, we see these challenges as
-                            opportunities to drive transformation. Our
-                            mission is to help harness Africa’s demographic
-                            potential through innovation, skills, and
-                            sustainable development.
+                            The Africa Regional Conference and Exhibition
+                            on Education and Skills Development (ARC-EDS)
+                            is a flagship platform convened by ESDEV
+                            Foundation Africa to foster dialogue,
+                            innovation, and collaboration across
+                            the continent’s education and skills
+                            ecosystem. Since its inception, ARC-EDS has
+                            created space for policymakers, educators,
+                            researchers, industry leaders, and youth to
+                            address critical challenges and explore
+                            opportunities at the intersection of education,
+                            employment, and sustainable development.
                         </p>
                     </div>
                     <button className={styles.cta}><p>Learn More</p></button>
@@ -73,6 +142,41 @@ export default function Home() {
 
                 <div className={styles.media}>
                     <img src={Astro} alt="" />
+                </div>
+            </section>
+
+            <section className={styles.exhibitionSection}>
+                <h1>Exhibitions</h1>
+
+                <div className={styles.cardsContainer}>
+                    <div className={styles.card}>
+                        <i className="fal fa-wrench"></i>
+                        <h2>TVET Institutions</h2>
+                        <p>
+                            Innovations and entrepreneurial models
+                            emerging from Individuals Technical
+                            Institutions
+                        </p>
+                    </div>
+
+                    <div className={styles.card}>
+                        <i className="fal fa-solar-system"></i>
+                        <h2>STEM & Emerging Technologies</h2>
+                        <p>
+                            A unique opportunity to showcase
+                            frontier STEM & Emerging Technologies
+                        </p>
+                    </div>
+
+                    <div className={styles.card}>
+                        <i className="fal fa-users"></i>
+                        <h2>The General Public</h2>
+                        <p>
+                            For companies, organizations and
+                            startups to showcase their products
+                            and services
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -188,6 +292,25 @@ export default function Home() {
             <section className={styles.motherCompany}>
                 <div className={styles.image}>
                     <img src={ESDev} alt="" />
+                </div>
+                <p>ARC-EDS is a subsidiary of ESDEV Foundation Africa fueled by a passion for innovation and a commitment to excellence.</p>
+            </section>
+
+            <section className={styles.sponsorship}>
+                <div className={styles.content}>
+                    <div className={styles.leftCol}>
+                        <span>Join Us</span>
+                        <h2>Become a Sponsor</h2>
+                        <p>
+                            Partner with us to support innovation, skills development, and sustainable
+                            growth across Africa. Together, we can create lasting impact.
+                        </p>
+                    </div>
+
+                    <div className={styles.rightCol}>
+                        <button className={styles.cta}>Sponsor Us</button>
+                        <button className={styles.learnMoreBtn} onClick={() => navigate("/about")}>Learn More <i className="fal fa-arrow-up-right"></i></button>
+                    </div>
                 </div>
             </section>
         </main>
