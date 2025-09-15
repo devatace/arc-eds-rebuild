@@ -45,6 +45,7 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+*.sh
 
 # OS generated files
 .DS_Store
