@@ -2,6 +2,7 @@
   /* Colors */
   --color-primary: #f9c315;
   --color-primary-hover: #dfae0e;
+  --color-secondary: #00152f;
 
   --color-bg: #e9ebee;
   --color-bg-dark: #1c1c1c;
@@ -16,6 +17,7 @@
   --color-text-light: #ffffff;
   --color-text-muted: #6c757d;
 
+  --color-input: #293749;
   --color-border: #e0e0e0;
   --color-border-dark: #3a3a3a;
 
