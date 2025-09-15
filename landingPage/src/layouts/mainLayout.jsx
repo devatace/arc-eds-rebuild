@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useState } from 'react';
 import styles from '../styles/layouts/mainLayout.module.css'
 
+import { Fragment, useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router'
 
 const NavigationItem = ({ link, name }) => {
@@ -59,6 +59,14 @@ export default function MainLayout() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // footer magic
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // navigate(`/news?email=${email}`);
+        console.log('sending email...')
+    }
 
     return (
         <Fragment>
@@ -78,22 +86,94 @@ export default function MainLayout() {
                 </nav>
 
                 <div className={styles.socialLinks}>
-                    <a href="https://web.facebook.com/EduSkillsAfricaConference/">
+                    <a target='_blank' href="https://web.facebook.com/EduSkillsAfricaConference/">
                         <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://x.com/EduSkillsAfrica?mx=2">
+                    <a target='_blank' href="https://x.com/EduSkillsAfrica?mx=2">
                         <i className="fab fa-x-twitter"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/eduskillsafrica-7273422bb/">
+                    <a target='_blank' href="https://www.linkedin.com/in/eduskillsafrica-7273422bb/">
                         <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.youtube.com/@esdevFoundationAfrica">
+                    <a target='_blank' href="https://www.youtube.com/@esdevFoundationAfrica">
                         <i className="fab fa-youtube"></i>
                     </a>
                 </div>
             </header>
 
             <Outlet />
+
+            <footer>
+                <section className={styles.about}>
+                    <div className={styles.logo}>
+                        <img src="/icon.svg" alt="ARC-EDS logo" width={150} />
+                    </div>
+
+                    <p>
+                        The Africa Regional Conference &
+                        Exhibition on Education and Skills
+                        Development (ARC-EDS) is an initiative
+                        of ESDEV Foundation Africa.
+                    </p>
+
+                    <div className={styles.socialMediaLinks}>
+                        <a target='_blank' href="https://web.facebook.com/EduSkillsAfricaConference/">
+                            <i className="fab fa-facebook"></i>
+                        </a>
+
+                        <a target='_blank' href="https://x.com/EduSkillsAfrica?mx=2">
+                            <i className="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a target='_blank' href="https://www.linkedin.com/in/eduskillsafrica-7273422bb/">
+                            <i className="fab fa-linkedin"></i>
+                        </a>
+
+                        <a target='_blank' href="https://www.youtube.com/@esdevFoundationAfrica">
+                            <i className="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <section className={styles.links}>
+                    <div className={styles.column}>
+                        <h4>Company</h4>
+                        <div className={styles.linkLine}>
+                            <p onClick={() => navigate("/")}>Home</p>
+                            <p onClick={() => navigate("/about")}>About</p>
+                            <p onClick={() => navigate("/exhibition")}>Exhibition</p>
+                            <p onClick={() => navigate("/gallery")}>Gallery</p>
+                            <p onClick={() => navigate("/news")}>News & Updates</p>
+                            <p onClick={() => navigate("/past-events")}>Past Events</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.column}>
+                        <h4>Support</h4>
+                        <div className={styles.linkLine}>
+                            <p onClick={() => navigate("/faqs")}>FAQs</p>
+                            <p onClick={() => navigate("/terms")}>Terms of Service</p>
+                            <p onClick={() => navigate("/privacy")}>Privacy Policy</p>
+                            <p onClick={() => navigate("/legal")}>Legal</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className={styles.newsletter}>
+                    <h2>Stay up to date</h2>
+                    <div className={styles.fieldContainer}>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder='Enter your email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button className={styles.sendBtn}><i className="fal fa-send"></i></button>
+                    </div>
+                </section>
+            </footer>
         </Fragment>
     )
 }
