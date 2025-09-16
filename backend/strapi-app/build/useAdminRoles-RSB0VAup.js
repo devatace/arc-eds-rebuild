@@ -1,1 +1,0 @@
-import{k as u,bh as f,bi as p,f as b}from"./strapi-CGAa_rXE.js";const x=(o={},r)=>{const{locale:t}=u(),s=f(t,{sensitivity:"base"}),{data:e,error:a,isError:n,isLoading:c,refetch:i}=p(o,r);return{roles:b.useMemo(()=>[...e??[]].sort((l,m)=>s.compare(l.name,m.name)),[e,s]),error:a,isError:n,isLoading:c,refetch:i}};export{x as u};
