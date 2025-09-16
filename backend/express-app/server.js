@@ -1,32 +1,25 @@
-const express = require("express");
-
-require("dotenv").config();
-
-const { createStrapi } = require("@strapi/strapi");
+import express from "express";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
-// Example: custom Express route
+// Native Express route
 app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from Express + Strapi v5!" });
+  res.json({ message: "Hello from Express (ESM)!" });
 });
 
-const start = async () => {
-  try {
-    // Create Strapi instance
-    const strapiApp = await createStrapi().load();
+// Proxy Strapi Admin + API
+app.use(
+  ["/admin", "/api", "/uploads"],
+  createProxyMiddleware({
+    target: "http://localhost:1337", // Strapi server
+    changeOrigin: true,
+  })
+);
 
-    // Start Strapi (admin panel + content API)
-    await strapiApp.start();
-
-    // Start your Express server
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => {
-      console.log(`🚀 Express server running on http://localhost:${PORT}`);
-    });
-  } catch (err) {
-    console.error("Error starting app:", err);
-  }
-};
-
-start();
+const PORT = process.env.EXP_PORT || 3300;
+app.listen(PORT, () => {
+  console.log(`🚀 Express server running at http://localhost:${PORT}`);
+  console.log(`✅ Strapi Admin available at http://localhost:${PORT}/admin`);
+  console.log(`✅ Strapi API available at http://localhost:${PORT}/api`);
+});
