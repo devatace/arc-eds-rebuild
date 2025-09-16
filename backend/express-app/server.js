@@ -1,5 +1,6 @@
 import express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
+import { PORT } from "./utils/config.js";
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(
   })
 );
 
-const PORT = process.env.EXP_PORT || 3300;
+
 app.listen(PORT, () => {
   console.log(`🚀 Express server running at http://localhost:${PORT}`);
   console.log(`✅ Strapi Admin available at http://localhost:${PORT}/admin`);

@@ -4,16 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "prestart": "node check-build.js",
-    "start": "nodemon server.js",
-    "develop": "strapi develop",
-    "build": "strapi build"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "http-proxy-middleware": "^3.0.5",
     "mysql2": "^3.14.5",
