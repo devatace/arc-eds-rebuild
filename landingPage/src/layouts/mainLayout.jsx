@@ -96,7 +96,7 @@ export default function MainLayout() {
         <Fragment>
             <header className={(scrolled || isNavVisible) ? styles.scrolled : ''}>
                 <a href="/" className={styles.logo}>
-                    <img src="/icon.svg" alt="EduSkills Africa logo" width={150} />
+                    <img src={Logo} alt="EduSkills Africa logo" width={150} />
                 </a>
 
                 <nav>
@@ -146,7 +146,7 @@ export default function MainLayout() {
             <footer>
                 <section className={styles.about}>
                     <div className={styles.logo}>
-                        <img src="/icon.svg" alt="ARC-EDS logo" width={150} />
+                        <img src={Logo} alt="ARC-EDS logo" width={150} />
                     </div>
 
                     <p>
