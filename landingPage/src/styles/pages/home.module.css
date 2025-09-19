@@ -507,6 +507,13 @@
   justify-content: center;
   gap: 1rem;
   justify-self: center;
+  transition: 0.35s;
+
+  &:hover {
+    transform: translateY(-10px);
+    /* box-shadow: 0 70px 50px -90px hsl(207, 100%, 41%); */
+    box-shadow: 0 70px 40px -70px var(--color-primary);
+  }
 
   .content {
     width: 100%;
@@ -521,8 +528,8 @@
 
       span {
         font-size: var(--font-xs);
-        font-weight: 500;
-        color: var(--color-text-muted);
+        font-weight: 600;
+        color: var(--color-primary);
         text-transform: uppercase;
         letter-spacing: 1px;
       }
