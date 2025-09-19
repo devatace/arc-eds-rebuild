@@ -68,9 +68,15 @@ export default function MainLayout() {
         console.log('sending email...')
     }
 
+    const [isNavVisible, setIsNavVisible] = useState(false);
+
+    const toggleNav = () => {
+        setIsNavVisible(!isNavVisible);
+    };
+
     return (
         <Fragment>
-            <header className={scrolled ? styles.scrolled : ''}>
+            <header className={(scrolled || isNavVisible) ? styles.scrolled : ''}>
                 <a href="/" className={styles.logo}>
                     <img src="/icon.svg" alt="EduSkills Africa logo" width={150} />
                 </a>
@@ -99,6 +105,22 @@ export default function MainLayout() {
                         <i className="fab fa-youtube"></i>
                     </a>
                 </div>
+
+                <button className={styles.mobileMenu} onClick={toggleNav}>
+                    {isNavVisible ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
+                </button>
+
+                {isNavVisible &&
+                    <div className={styles.mobileLinks}>
+                        {links.map((link, idx) => (
+                            <NavigationItem
+                                key={idx}
+                                link={link.link}
+                                name={link.name}
+                            />
+                        ))}
+                    </div>
+                }
             </header>
 
             <Outlet />
@@ -174,6 +196,10 @@ export default function MainLayout() {
                     </div>
                 </section>
             </footer>
+
+            <div className={styles.copyright}>
+                <p>Copyright &copy; {new Date().getFullYear()} Africa Regional Conference & Exhibition on Education and Skills Development. All Rights Reserved.</p>
+            </div>
         </Fragment>
     )
 }
