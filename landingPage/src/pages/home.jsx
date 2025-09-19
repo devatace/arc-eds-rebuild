@@ -6,7 +6,10 @@ import { Fragment } from 'react';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import Counter from '../lib/counter';
+
 import Astro from '../assets/landing/astro.webp';
+import Map from '../assets/landing/map.png';
 import Slide1 from '../assets/landing/slideshow/slide1.webp';
 import Slide2 from '../assets/landing/slideshow/slide2.webp';
 import Slide3 from '../assets/landing/slideshow/slide3.webp';
@@ -19,7 +22,6 @@ import Slide9 from '../assets/landing/slideshow/slide9.webp';
 import Slide10 from '../assets/landing/slideshow/slide10.webp';
 import NewsMain from '../assets/landing/news-main.webp';
 import ESDev from '../assets/landing/es.svg';
-import Counter from '../lib/counter';
 
 export default function Home() {
     const slides = [
@@ -117,7 +119,6 @@ export default function Home() {
             <section className={styles.whoWeAre}>
                 <div className={styles.content}>
                     <div className={styles.title}>
-                        <div className={styles.line}></div>
                         <h1>Know About Us</h1>
                     </div>
                     <h2>Harnessing Potential, <br /> Shaping the Future</h2>
@@ -142,6 +143,10 @@ export default function Home() {
 
                 <div className={styles.media}>
                     <img src={Astro} alt="" />
+                </div>
+
+                <div className={styles.backgroundImg}>
+                    <img src={Map} alt="world map" />
                 </div>
             </section>
 
