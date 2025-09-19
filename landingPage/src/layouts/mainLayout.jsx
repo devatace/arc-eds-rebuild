@@ -2,6 +2,9 @@ import styles from '../styles/layouts/mainLayout.module.css'
 
 import { Fragment, useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router'
+import Lenis from 'lenis'
+
+import Logo from '../assets/logo.png'
 
 const NavigationItem = ({ link, name }) => {
     return (
@@ -21,6 +24,21 @@ const NavigationItem = ({ link, name }) => {
 export default function MainLayout() {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const lenis = new Lenis({
+            smoothWheel: true,
+            duration: 1.5,
+            direction: 'vertical',
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
 
     const links = [
         {
