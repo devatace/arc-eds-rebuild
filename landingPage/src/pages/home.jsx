@@ -121,7 +121,7 @@ export default function Home() {
                     <div className={styles.title}>
                         <h1>Know About Us</h1>
                     </div>
-                    <h2>Harnessing Potential, <br /> Shaping the Future</h2>
+                    <h2>Harnessing Potential, Shaping the Future</h2>
                     <div className={styles.text}>
                         <p>
                             The Africa Regional Conference and Exhibition
@@ -229,11 +229,7 @@ export default function Home() {
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                 </p>
-                            </div>
-
-                            <div className={styles.actions}>
                                 <span><p>Aug 18, 2024</p></span>
-                                <button className={styles.readMoreBtn}>Read More</button>
                             </div>
                         </div>
                         <div className={styles.newsCard}>
@@ -247,11 +243,7 @@ export default function Home() {
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                 </p>
-                            </div>
-
-                            <div className={styles.actions}>
                                 <span><p>Aug 18, 2024</p></span>
-                                <button className={styles.readMoreBtn}>Read More</button>
                             </div>
                         </div>
                         <div className={styles.newsCard}>
@@ -265,11 +257,7 @@ export default function Home() {
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                 </p>
-                            </div>
-
-                            <div className={styles.actions}>
                                 <span><p>Aug 18, 2024</p></span>
-                                <button className={styles.readMoreBtn}>Read More</button>
                             </div>
                         </div>
                         <div className={styles.newsCard}>
@@ -283,11 +271,7 @@ export default function Home() {
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                     Astronaut Neil Armstrong was the first person to walk on the moon
                                 </p>
-                            </div>
-
-                            <div className={styles.actions}>
                                 <span><p>Aug 18, 2024</p></span>
-                                <button className={styles.readMoreBtn}>Read More</button>
                             </div>
                         </div>
                     </section>
