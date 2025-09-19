@@ -6,9 +6,9 @@ import Lenis from 'lenis'
 
 import Logo from '../assets/logo.png'
 
-const NavigationItem = ({ link, name }) => {
+const NavigationItem = ({ link, name, onLinkClick }) => {
     return (
-        <NavLink to={link}>
+        <NavLink to={link} onClick={() => onLinkClick()}>
             {({ isActive }) => (
                 <div className={`${styles.navigationItem} ${isActive ? styles.active : ''}`}>
                     <p>{name}</p>
@@ -135,6 +135,7 @@ export default function MainLayout() {
                                 key={idx}
                                 link={link.link}
                                 name={link.name}
+                                onLinkClick={toggleNav}
                             />
                         ))}
                     </div>
