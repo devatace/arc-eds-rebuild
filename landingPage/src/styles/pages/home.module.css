@@ -81,6 +81,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       cursor: pointer;
+      color: var(--color-text);
     }
   }
 }
