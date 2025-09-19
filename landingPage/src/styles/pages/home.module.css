@@ -216,9 +216,16 @@
   padding-block: 5rem;
   padding-inline: 28rem;
 
-  h1 {
-    font-size: var(--font-xxl);
-    font-weight: 600;
+  .title {
+    text-align: center;
+    h1 {
+      font-size: var(--font-xxl);
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--color-text-muted);
+    }
   }
 
   .cardsContainer {
@@ -292,6 +299,10 @@
     h3 {
       font-size: var(--font-xxl);
       font-weight: 600;
+    }
+
+    p {
+      color: var(--color-text-muted);
     }
   }
 
@@ -626,8 +637,14 @@
     padding-block: 5rem;
     padding-inline: 1.2rem;
 
-    h1 {
-      font-size: 3rem;
+    .title {
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
     }
   }
 

@@ -151,7 +151,10 @@ export default function Home() {
             </section>
 
             <section className={styles.exhibitionSection}>
-                <h1>Exhibitions</h1>
+                <div className={styles.title}>
+                    <h1>Exhibitions</h1>
+                    <p>Turning technical skills and entrepreneurial ideas into real-world innovations and job opportunities.</p>
+                </div>
 
                 <div className={styles.cardsContainer}>
                     <div className={styles.card}>
