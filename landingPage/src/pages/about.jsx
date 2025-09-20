@@ -23,11 +23,16 @@ const Audience = ({ audience, style }) => {
     )
 }
 
-const FocusArea = ({ title, description }) => {
+const FocusArea = ({ title, description, image }) => {
     return (
         <div className={styles.focusArea}>
-            <h4>{title}</h4>
-            <p>{description}</p>
+            <div className={styles.imageContainer}>
+                <img src={image} />
+            </div>
+            <div className={styles.info}>
+                <h4>{title}</h4>
+                <p>{description}</p>
+            </div>
         </div>
     )
 }
@@ -74,22 +79,37 @@ export default function About() {
     const focusAreas = [
         {
             title: "Fostering Innovative Educational Models for Entrepreneurship",
-            description: "This sub-theme will explore educational models that cultivate entrepreneurship among the youth. It will showcase how Technical Universities, and allied institutions can enhance curricula to integrate entrepreneurship effectively, while presenting successful case studies and investment-ready educational innovations."
+            description: `This sub-theme will explore educational models that 
+            cultivate entrepreneurship among the youth. It will showcase how 
+            Technical Universities, and allied institutions can enhance curricula 
+            to integrate entrepreneurship effectively, while presenting successful 
+            case studies and investment-ready educational innovations.`,
+            image: Img01
         }, {
             title: "Youth Empowerment through Skills Development",
-            description: "This sub-theme will emphasize equipping young people with practical skills aligned with market demands. Discussions will focus on vocational training, apprenticeships, and partnerships with industry to ensure graduates are employment-ready. Investors will have the opportunity to explore scalable models for workforce development"
+            description: `This sub-theme will emphasize equipping young people with practical skills aligned with market demands. Discussions will focus on vocational training, apprenticeships, and partnerships with industry to ensure graduates are employment-ready. Investors will have the opportunity to explore scalable models for workforce development`,
+            image: Img01
+
         }, {
             title: "Industry Collaboration and Employment Opportunities",
-            description: "This sub-theme will strengthen partnerships between educational institutions and industry, highlighting internships, co-op programs, and industry-led projects that bridge the gap between education and employment. Discussions will identify actionable strategies for scaling these collaborations to create more employment opportunities"
+            description: `This sub-theme will strengthen partnerships between educational institutions and industry, highlighting internships, co-op programs, and industry-led projects that bridge the gap between education and employment. Discussions will identify actionable strategies for scaling these collaborations to create more employment opportunities`,
+            image: Img01
+
         }, {
             title: "Policy and Institutional Support for Youth Innovation",
-            description: "This sub-theme will advocate for supportive policies and institutional frameworks that encourage innovation and entrepreneurship among youth. It will explore funding opportunities, institutional reforms, and partnerships needed to support Africa’s next generation of entrepreneurs"
+            description: `This sub-theme will advocate for supportive policies and institutional frameworks that encourage innovation and entrepreneurship among youth. It will explore funding opportunities, institutional reforms, and partnerships needed to support Africa’s next generation of entrepreneurs`,
+            image: Img01
+
         }, {
             title: "Harnessing Green Entrepreneurship to Empower Youth for Sustainable Development and Employment",
-            description: "This sub-theme will focus on green entrepreneurship as a sustainable employment pathway. It will highlight policies, training programs, and innovations that equip young people to lead eco-friendly businesses. Successful green enterprises and investment opportunities will be showcased"
+            description: `This sub-theme will focus on green entrepreneurship as a sustainable employment pathway. It will highlight policies, training programs, and innovations that equip young people to lead eco-friendly businesses. Successful green enterprises and investment opportunities will be showcased`,
+            image: Img01
+
         }, {
             title: "Quantum Science and Technology as a Catalyst for Youth Job Creation",
-            description: "This sub-theme will explore how advancements in quantum science and technology can drive innovation and entrepreneurship among African youth. It will highlight opportunities for young people to leverage quantum technologies in fields such as computing, communications, and energy, and discuss strategies for integrating quantum science into education and industry collaborations. Successful global and regional examples will be showcased, emphasizing Africa’s potential to lead in this emerging field"
+            description: `This sub-theme will explore how advancements in quantum science and technology can drive innovation and entrepreneurship among African youth. It will highlight opportunities for young people to leverage quantum technologies in fields such as computing, communications, and energy, and discuss strategies for integrating quantum science into education and industry collaborations. Successful global and regional examples will be showcased, emphasizing Africa’s potential to lead in this emerging field`,
+            image: Img01
+
         }
     ]
 
@@ -97,37 +117,31 @@ export default function About() {
         <main className={styles.aboutLayout}>
             <section className={styles.context}>
                 <div className={styles.leftCol}>
-                    <Title title="The Context" />
+                    <Title title="The Context of the Conference" />
                     <p>
                         In the 2023 United Nations Report, Secretary-General
                         António Guterres acknowledges that only 12% of the 17
                         Sustainable Development Goals (SDGs) are on track to be
-                        achieved by 2030.<br />
+                        achieved by 2030.
                         The report highlights that, without a significant
                         acceleration of efforts, meeting all the goals by the
                         deadline remains unlikely. Of particular concern is Goal
                         8, which focuses on inclusive and sustainable economic
                         growth, full and productive employment, and decent work
-                        for all.<br />
+                        for all.
                         For many African countries, achieving this goal appears
                         increasingly difficult, given that youth unemployment
                         exceeds 30% in several sub-Saharan nations. Meanwhile,
                         the United Nations projects Africa’s population to reach
                         2.5 billion by 2050, meaning nearly one-third of the world’s
                         population will reside on the continent within the next three
-                        decades.<br />
+                        decades.
                         This demographic shift presents both challenges and
                         opportunities. How should African governments respond? What
                         preparations are needed to harness the demographic dividend?
                         These critical questions underscore the significance of the
                         ARC-EDS initiative.
                     </p>
-                </div>
-
-                <div className={styles.rightCol}>
-                    <div className={styles.imageContainer}>
-                        <img src={Img01} alt="" />
-                    </div>
                 </div>
             </section>
 
@@ -166,6 +180,7 @@ export default function About() {
             </section>
 
             <section className={styles.conference}>
+                <Title title={'Conference Justification'} />
                 <div className={styles.topRow}>
                     <div className={styles.imageContainer}>
                         <img src={Img01} alt="" />
@@ -173,7 +188,6 @@ export default function About() {
                 </div>
 
                 <div className={styles.bottomRow}>
-                    <Title title={'Conference Justification'} />
                     <p>
                         Youth unemployment continues to hinder economic growth
                         and social stability in Africa. Traditional education
@@ -196,24 +210,16 @@ export default function About() {
             </section>
 
             <section className={styles.conferenceObj}>
-                <div className={styles.leftCol}>
-                    <Title title={'Conference Objectives'} />
-                    <p>The 2025 ARC-EDS aims to achieve the following specific objectives:</p>
-                    <div className={styles.objectives}>
-                        {objectives.map((o, idx) =>
-                            <Objective
-                                key={idx}
-                                objective={o.objective}
-                                style={{ animationDelay: `${idx * 0.2}s` }}
-                            />)}
-                    </div>
-                </div>
+                <Title title={'Conference Objectives'} />
+                <p>The 2025 ARC-EDS aims to achieve the following specific objectives:</p>
 
-                <div className={styles.rightCol}>
-                    <div className={styles.imageContainer}>
-                        <img src={Img01} alt="" />
-                    </div>
-
+                <div className={styles.objectives}>
+                    {objectives.map((o, idx) =>
+                        <Objective
+                            key={idx}
+                            objective={o.objective}
+                            style={{ animationDelay: `${idx * 0.2}s` }}
+                        />)}
                 </div>
             </section>
 
@@ -233,42 +239,67 @@ export default function About() {
             </section>
 
             <section className={styles.focus}>
-                <div className={styles.leftCol}>
+                <div className={styles.topRow}>
                     <Title title={'Focus Areas'} />
                     <p>
                         Our focus areas highlight the core themes that drive our work —
                         from innovation and skills development to sustainable solutions —
                         showing where we channel our expertise and impact.
                     </p>
-                    <div className={styles.imageContainer}>
-                        <img src={Img01} alt="" />
-                    </div>
                 </div>
 
-                <div className={styles.rightCol}>
-                    <div className={styles.focusAreaContainer}>
-                        {focusAreas.map((f, idx) => <FocusArea key={idx} title={f.title} description={f.description} />)}
-                    </div>
+                <div className={styles.focusAreaContainer}>
+                    {focusAreas.map((f, idx) => <FocusArea key={idx} title={f.title} description={f.description} />)}
                 </div>
             </section>
 
             <section className={styles.motherCopmpany}>
-                <div className={styles.topRow}>
-                    <div className={styles.imageContainer}>
-                        <img src={EsDev} alt="" />
+                <div className={styles.container}>
+                    <div className={styles.topRow}>
+                        <div className={styles.imageContainer}>
+                            <img src={EsDev} alt="" />
+                        </div>
                     </div>
+                    <div className={styles.bottomRow}>
+                        <p>
+                            ESDEV Foundation Africa is a non-profit, Pan African Non-Governmental Organisation committed to
+                            promoting quality education and skills development, innovative research, and lifelong
+                            learning opportunities for Africa’s socio-economic transformation.
+                            We are inspired by the vision and aspirations of the late Prof. Francis K. A. Allotey (the renowned
+                            Ghanaian mathematical physicist and promoter of STEM education in Africa), who mentored the founding
+                            partners of ESDEV Foundation Africa.<br />
+                            We believe that Africa’s greatest resource is its people, therefore, investment in education and skills
+                            development will empower the youth to address the multidimensional causes of poverty.
+                        </p>
+                    </div>
+                    <button>Read More <i className="fal fa-arrow-up-right"></i></button>
                 </div>
-                <div className={styles.bottomRow}>
-                    <p>
-                        ESDEV Foundation Africa is a non-profit, Pan African Non-Governmental Organisation committed to
-                        promoting quality education and skills development, innovative research, and lifelong
-                        learning opportunities for Africa’s socio-economic transformation.
-                        We are inspired by the vision and aspirations of the late Prof. Francis K. A. Allotey (the renowned
-                        Ghanaian mathematical physicist and promoter of STEM education in Africa), who mentored the founding
-                        partners of ESDEV Foundation Africa.<br />
-                        We believe that Africa’s greatest resource is its people, therefore, investment in education and skills
-                        development will empower the youth to address the multidimensional causes of poverty.
-                    </p>
+            </section>
+
+            <section className={styles.contactUs}>
+                <Title title={'Get In Touch'} />
+
+                <div className={styles.container}>
+                    <div className={styles.card}>
+                        <i className="fal fa-envelope"></i>
+                        <p>admin@arc-eds.com</p>
+                    </div>
+                    <div className={styles.card}>
+                        <i className="fal fa-phone"></i>
+                        <p>+233 241 020 391</p>
+                        <p>+233 55 55 55 55</p>
+                    </div>
+                    <div className={styles.card}>
+                        <i className="fal fa-location-pin"></i>
+                        <p>
+                            No.2 Kweku Boi Street Romick Plaza Adenta, <br /> Accra, Ghana
+                        </p>
+                    </div>
+                    <div className={styles.card}>
+                        <i className="fal fa-clock"></i>
+                        <p>Mondays - Fridays</p>
+                        <p>8:00am - 5:00pm</p>
+                    </div>
                 </div>
             </section>
         </main>
