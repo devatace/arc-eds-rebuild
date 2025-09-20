@@ -230,6 +230,7 @@
   gap: 2rem;
   padding-inline: 15rem;
   position: relative;
+  margin-bottom: 8rem;
 
   .container {
     width: 100%;
@@ -241,7 +242,6 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 5rem;
     background: linear-gradient(
       to top right,
       hsl(199, 100%, 77%),
